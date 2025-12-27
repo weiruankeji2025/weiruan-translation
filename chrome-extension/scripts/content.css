@@ -1,0 +1,267 @@
+/* 微软科技 - 智能翻译助手样式 */
+/* Author: 微软科技 */
+
+@keyframes weiruan-fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes weiruan-pulse {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(0, 217, 255, 0.5);
+    }
+}
+
+@keyframes weiruan-shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.weiruan-translation-panel {
+    position: fixed;
+    z-index: 999999;
+    min-width: 380px;
+    max-width: 500px;
+    background: rgba(17, 24, 39, 0.98);
+    border: 2px solid rgba(0, 217, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5),
+                0 0 40px rgba(0, 217, 255, 0.5);
+    animation: weiruan-fadeIn 0.3s ease-out;
+    backdrop-filter: blur(10px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+}
+
+.weiruan-panel-header {
+    background: linear-gradient(135deg, #667eea 0%, #00d9ff 100%);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: move;
+    position: relative;
+    overflow: hidden;
+}
+
+.weiruan-panel-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent);
+    animation: weiruan-shimmer 3s infinite;
+}
+
+.weiruan-panel-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.weiruan-panel-title::before {
+    content: '⚡';
+    font-size: 20px;
+}
+
+.weiruan-close-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 32px;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.weiruan-close-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(90deg);
+}
+
+.weiruan-panel-body {
+    padding: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.weiruan-panel-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.weiruan-panel-body::-webkit-scrollbar-track {
+    background: rgba(31, 41, 55, 0.95);
+}
+
+.weiruan-panel-body::-webkit-scrollbar-thumb {
+    background: #00d9ff;
+    border-radius: 3px;
+}
+
+.weiruan-original-text {
+    background: rgba(31, 41, 55, 0.95);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border-left: 4px solid #00d9ff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.weiruan-original-label {
+    font-size: 12px;
+    color: #00d9ff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.weiruan-original-content {
+    color: #f9fafb;
+    font-size: 15px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.weiruan-translation-item {
+    background: rgba(31, 41, 55, 0.95);
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.weiruan-translation-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #667eea, #00d9ff);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.weiruan-translation-item:hover {
+    transform: translateX(8px);
+    border-color: rgba(0, 217, 255, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.weiruan-translation-item:hover::before {
+    opacity: 1;
+}
+
+.weiruan-engine-name {
+    font-size: 13px;
+    color: #00d9ff;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.weiruan-translation-text {
+    color: #f9fafb;
+    font-size: 14px;
+    line-height: 1.7;
+    word-break: break-word;
+}
+
+.weiruan-loading {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.weiruan-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 217, 255, 0.2);
+    border-top-color: #00d9ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 16px;
+}
+
+.weiruan-loading-text {
+    color: #d1d5db;
+    font-size: 14px;
+}
+
+.weiruan-footer {
+    text-align: center;
+    padding: 16px;
+    background: rgba(31, 41, 55, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #d1d5db;
+    font-size: 12px;
+}
+
+.weiruan-footer-logo {
+    background: linear-gradient(135deg, #667eea, #00d9ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.weiruan-subtitle-translation {
+    color: #00d9ff;
+    font-size: 0.9em;
+    margin-top: 4px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.weiruan-toast {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(31, 41, 55, 0.95);
+    color: #f9fafb;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 9999999;
+    font-size: 14px;
+    animation: weiruan-fadeIn 0.3s ease-out;
+    transition: opacity 0.3s;
+}
