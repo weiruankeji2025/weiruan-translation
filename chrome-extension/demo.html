@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微软科技 - 智能翻译助手 测试页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin: 8px 4px;
+            backdrop-filter: blur(10px);
+        }
+
+        .test-section {
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .test-section h2 {
+            color: #667eea;
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .test-section h2::before {
+            content: '⚡';
+            font-size: 32px;
+        }
+
+        .test-content {
+            line-height: 1.8;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .test-content p {
+            margin-bottom: 16px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .instruction {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .instruction-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .instruction-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .instruction-list li {
+            padding: 8px 0;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .instruction-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .code-block {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+
+        .image-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .test-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .test-image:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 60px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="float-animation">🚀 智能翻译助手</h1>
+            <p>测试页面 - 体验强大的多引擎翻译功能</p>
+            <div>
+                <span class="badge">✨ 选词翻译</span>
+                <span class="badge">🌐 多引擎对比</span>
+                <span class="badge">⚡ 快捷键 Alt+Q</span>
+                <span class="badge">🎨 科技感UI</span>
+            </div>
+        </div>
+
+        <div class="instruction">
+            <div class="instruction-title">📖 使用说明</div>
+            <ul class="instruction-list">
+                <li>确保已安装 Tampermonkey 扩展</li>
+                <li>安装 <strong>weiruan-translator.user.js</strong> 脚本</li>
+                <li>在下方测试区域选中任意文本</li>
+                <li>或按 <strong>Alt + Q</strong> 快捷键触发翻译</li>
+                <li>点击翻译结果即可复制到剪贴板</li>
+            </ul>
+        </div>
+
+        <!-- 英文测试区域 -->
+        <div class="test-section">
+            <h2>English Translation Test</h2>
+            <div class="test-content">
+                <p>
+                    <span class="highlight">Artificial Intelligence</span> is transforming the way we live and work.
+                    Machine learning algorithms can now process vast amounts of data and identify patterns that
+                    humans might miss. From healthcare to finance, AI is revolutionizing every industry.
+                </p>
+                <p>
+                    The future of technology lies in the seamless integration of AI with our daily lives.
+                    Smart assistants, autonomous vehicles, and personalized recommendations are just the beginning.
+                    As we continue to innovate, the possibilities are truly endless.
+                </p>
+                <p>
+                    <strong>Try selecting this text:</strong> "Hello World! Welcome to the amazing world of translation technology."
+                </p>
+            </div>
+        </div>
+
+        <!-- 日文测试区域 -->
+        <div class="test-section">
+            <h2>Japanese Translation Test (日本語)</h2>
+            <div class="test-content">
+                <p>
+                    こんにちは！これは<span class="highlight">翻訳テスト</span>のためのサンプルテキストです。
+                    日本の桜は春に美しく咲き、多くの人々を魅了します。
+                </p>
+                <p>
+                    テクノロジーの進歩により、言語の壁はますます低くなっています。
+                    リアルタイム翻訳により、世界中の人々とコミュニケーションを取ることができます。
+                </p>
+                <p>
+                    <strong>このテキストを選択してみてください：</strong>
+                    「人工知能は私たちの生活を変えています。」
+                </p>
+            </div>
+        </div>
+
+        <!-- 技术文档测试 -->
+        <div class="test-section">
+            <h2>Technical Documentation Test</h2>
+            <div class="test-content">
+                <p>
+                    <span class="highlight">JavaScript ES6+</span> introduced many powerful features that make
+                    code more readable and maintainable. Arrow functions, destructuring, and async/await are
+                    just a few examples of these improvements.
+                </p>
+                <div class="code-block">
+// Example: Async/await syntax
+async function fetchData() {
+    try {
+        const response = await fetch('https://api.example.com/data');
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error fetching data:', error);
+    }
+}
+                </div>
+                <p>
+                    Modern web development requires understanding of various concepts including
+                    <strong>RESTful APIs, WebSockets, Progressive Web Apps (PWA), and Single Page Applications (SPA)</strong>.
+                </p>
+            </div>
+        </div>
+
+        <!-- 多语言混合测试 -->
+        <div class="test-section">
+            <h2>Multi-Language Test (混合言語)</h2>
+            <div class="test-content">
+                <p>
+                    🇺🇸 <strong>English:</strong> The quick brown fox jumps over the lazy dog.
+                </p>
+                <p>
+                    🇨🇳 <strong>中文:</strong> 快速的棕色狐狸跳过懒狗。这是一个经典的英文打字练习句子。
+                </p>
+                <p>
+                    🇫🇷 <strong>Français:</strong> Bonjour! Comment allez-vous aujourd'hui? La vie est belle.
+                </p>
+                <p>
+                    🇩🇪 <strong>Deutsch:</strong> Guten Tag! Wie geht es Ihnen? Die Technologie verbindet die Welt.
+                </p>
+                <p>
+                    🇪🇸 <strong>Español:</strong> ¡Hola! ¿Cómo estás? La tecnología de traducción es increíble.
+                </p>
+                <p>
+                    🇰🇷 <strong>한국어:</strong> 안녕하세요! 번역 기술은 놀랍습니다. 언어의 장벽이 없어지고 있습니다.
+                </p>
+            </div>
+        </div>
+
+        <!-- 图片翻译测试说明 -->
+        <div class="test-section">
+            <h2>Image Translation Test (开发中)</h2>
+            <div class="test-content">
+                <p>
+                    图片OCR翻译功能正在开发中。未来您可以右键点击包含文字的图片，
+                    脚本会自动识别图片中的文字并进行翻译。
+                </p>
+                <p>
+                    <span class="highlight">计划支持的功能：</span>
+                </p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>识别图片中的文字（支持多种语言）</li>
+                    <li>实时翻译识别结果</li>
+                    <li>支持截图翻译</li>
+                    <li>支持扫描文档翻译</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 视频字幕测试说明 -->
+        <div class="test-section">
+            <h2>Video Subtitle Translation Test</h2>
+            <div class="test-content">
+                <p>
+                    视频字幕自动翻译功能已集成！在 Tampermonkey 菜单中开启
+                    <span class="highlight">"切换字幕自动翻译"</span> 选项。
+                </p>
+                <p>
+                    <strong>支持的视频网站：</strong>
+                </p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>✅ YouTube - 自动翻译字幕</li>
+                    <li>✅ Netflix - 实时字幕翻译</li>
+                    <li>✅ Bilibili - 弹幕和字幕翻译</li>
+                    <li>✅ 其他包含字幕的网站</li>
+                </ul>
+                <p style="margin-top: 20px;">
+                    <strong>测试方法：</strong> 打开 YouTube 或 Netflix 视频，开启字幕功能，
+                    翻译会自动显示在原字幕下方。
+                </p>
+            </div>
+        </div>
+
+        <!-- 快捷键测试 -->
+        <div class="test-section">
+            <h2>Keyboard Shortcut Test</h2>
+            <div class="test-content">
+                <p>
+                    按下 <span class="highlight">Alt + Q</span> 快捷键可以快速触发翻译功能。
+                </p>
+                <div class="instruction">
+                    <div class="instruction-title">⌨️ 快捷键测试步骤</div>
+                    <ul class="instruction-list">
+                        <li>用鼠标选中下面的任意文本</li>
+                        <li>按下 <strong>Alt + Q</strong> 组合键</li>
+                        <li>翻译面板会立即弹出</li>
+                        <li>查看多个翻译引擎的结果对比</li>
+                    </ul>
+                </div>
+                <p style="background: #fff3cd; padding: 15px; border-radius: 8px; margin-top: 20px;">
+                    💡 <strong>提示：</strong> 您可以在脚本配置中自定义快捷键，
+                    例如改为 Ctrl+T、Shift+E 等组合键。
+                </p>
+            </div>
+        </div>
+
+        <!-- 功能特性展示 -->
+        <div class="test-section">
+            <h2>Feature Highlights</h2>
+            <div class="test-content">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                    <div style="background: #f0f4ff; padding: 20px; border-radius: 12px;">
+                        <div style="font-size: 32px; margin-bottom: 12px;">🌐</div>
+                        <h3 style="color: #667eea; margin-bottom: 8px;">多引擎翻译</h3>
+                        <p style="font-size: 14px; color: #666;">
+                            同时调用 Google、Bing、MyMemory 三大翻译引擎，对比结果选择最佳翻译
+                        </p>
+                    </div>
+                    <div style="background: #f0f4ff; padding: 20px; border-radius: 12px;">
+                        <div style="font-size: 32px; margin-bottom: 12px;">⚡</div>
+                        <h3 style="color: #667eea; margin-bottom: 8px;">快速响应</h3>
+                        <p style="font-size: 14px; color: #666;">
+                            并行请求，秒级返回翻译结果，无需等待
+                        </p>
+                    </div>
+                    <div style="background: #f0f4ff; padding: 20px; border-radius: 12px;">
+                        <div style="font-size: 32px; margin-bottom: 12px;">🎨</div>
+                        <h3 style="color: #667eea; margin-bottom: 8px;">科技感UI</h3>
+                        <p style="font-size: 14px; color: #666;">
+                            渐变色、毛玻璃、流光效果，打造极致视觉体验
+                        </p>
+                    </div>
+                    <div style="background: #f0f4ff; padding: 20px; border-radius: 12px;">
+                        <div style="font-size: 32px; margin-bottom: 12px;">🔒</div>
+                        <h3 style="color: #667eea; margin-bottom: 8px;">隐私安全</h3>
+                        <p style="font-size: 14px; color: #666;">
+                            本地运行，不收集数据，直连API，保护您的隐私
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-logo">微软科技</div>
+            <p>专注于开发实用的浏览器工具</p>
+            <p style="margin-top: 16px; opacity: 0.8;">
+                Made with ❤️ by 微软科技 | Version 1.0.0
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载完成后的提示
+        window.addEventListener('load', function() {
+            console.log('%c🚀 微软科技 - 智能翻译助手', 'font-size: 24px; color: #667eea; font-weight: bold;');
+            console.log('%c✨ 选中任意文本或按 Alt+Q 开始翻译', 'font-size: 14px; color: #666;');
+            console.log('%c📖 GitHub: https://github.com/weiruankeji/weiruan-translation', 'font-size: 12px; color: #999;');
+        });
+
+        // 点击代码块复制功能
+        document.querySelectorAll('.code-block').forEach(function(block) {
+            block.style.cursor = 'pointer';
+            block.title = '点击复制代码';
+            block.addEventListener('click', function() {
+                const text = this.textContent;
+                navigator.clipboard.writeText(text).then(function() {
+                    console.log('代码已复制到剪贴板');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

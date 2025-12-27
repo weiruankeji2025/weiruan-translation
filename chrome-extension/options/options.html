@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>微软科技 - 智能翻译助手 设置</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>⚡ 智能翻译助手 - 设置</h1>
+            <p class="subtitle">Powered by <strong>微软科技</strong></p>
+        </header>
+
+        <div class="content">
+            <div class="settings-section">
+                <h2>🎯 基本设置</h2>
+
+                <div class="setting-group">
+                    <label for="targetLang">默认目标语言</label>
+                    <select id="targetLang" class="input-field">
+                        <option value="zh-CN">中文简体 (简体中文)</option>
+                        <option value="zh-TW">中文繁体 (繁體中文)</option>
+                        <option value="en">英语 (English)</option>
+                        <option value="ja">日语 (日本語)</option>
+                        <option value="ko">韩语 (한국어)</option>
+                        <option value="fr">法语 (Français)</option>
+                        <option value="de">德语 (Deutsch)</option>
+                        <option value="es">西班牙语 (Español)</option>
+                        <option value="ru">俄语 (Русский)</option>
+                        <option value="ar">阿拉伯语 (العربية)</option>
+                        <option value="pt">葡萄牙语 (Português)</option>
+                        <option value="it">意大利语 (Italiano)</option>
+                        <option value="nl">荷兰语 (Nederlands)</option>
+                        <option value="pl">波兰语 (Polski)</option>
+                        <option value="tr">土耳其语 (Türkçe)</option>
+                    </select>
+                    <p class="help-text">选择翻译的默认目标语言</p>
+                </div>
+
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="autoTranslateSubtitle">
+                        <span>自动翻译视频字幕</span>
+                    </label>
+                    <p class="help-text">在YouTube、Netflix等视频网站自动翻译字幕</p>
+                </div>
+
+                <div class="setting-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="showToast">
+                        <span>显示翻译提示</span>
+                    </label>
+                    <p class="help-text">翻译成功后显示提示消息</p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2>⌨️ 快捷键设置</h2>
+
+                <div class="setting-group">
+                    <label>翻译快捷键</label>
+                    <div class="hotkey-display">
+                        <kbd>Alt</kbd> + <kbd>Q</kbd>
+                    </div>
+                    <p class="help-text">
+                        当前快捷键：Alt + Q
+                        <br>
+                        如需修改，请前往：Chrome设置 → 扩展程序 → 键盘快捷键
+                    </p>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2>🎨 界面设置</h2>
+
+                <div class="setting-group">
+                    <label>主题颜色</label>
+                    <div class="color-picker-group">
+                        <div class="color-option">
+                            <input type="radio" name="theme" value="blue" id="theme-blue" checked>
+                            <label for="theme-blue" class="color-label">
+                                <span class="color-preview" style="background: linear-gradient(135deg, #667eea, #00d9ff);"></span>
+                                <span>科技蓝（默认）</span>
+                            </label>
+                        </div>
+                        <div class="color-option">
+                            <input type="radio" name="theme" value="purple" id="theme-purple">
+                            <label for="theme-purple" class="color-label">
+                                <span class="color-preview" style="background: linear-gradient(135deg, #a855f7, #ec4899);"></span>
+                                <span>紫罗兰</span>
+                            </label>
+                        </div>
+                        <div class="color-option">
+                            <input type="radio" name="theme" value="green" id="theme-green">
+                            <label for="theme-green" class="color-label">
+                                <span class="color-preview" style="background: linear-gradient(135deg, #10b981, #06b6d4);"></span>
+                                <span>翠绿色</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2>📊 使用统计</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value" id="totalTranslations">0</div>
+                        <div class="stat-label">总翻译次数</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="todayTranslations">0</div>
+                        <div class="stat-label">今日翻译</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value" id="favoriteEngine">Google</div>
+                        <div class="stat-label">最常用引擎</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2>ℹ️ 关于</h2>
+
+                <div class="about-content">
+                    <p><strong>微软科技 - 智能翻译助手</strong></p>
+                    <p>版本：1.0.0</p>
+                    <p>作者：微软科技</p>
+                    <p>许可：MIT License</p>
+                    <br>
+                    <p>功能特性：</p>
+                    <ul>
+                        <li>✨ 选词翻译（Alt+Q快捷键）</li>
+                        <li>🌐 多引擎翻译对比</li>
+                        <li>📺 视频字幕自动翻译</li>
+                        <li>🎨 科技感UI设计</li>
+                        <li>🔒 隐私安全，本地运行</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="action-bar">
+                <button id="saveBtn" class="btn btn-primary">
+                    💾 保存设置
+                </button>
+                <button id="resetBtn" class="btn btn-secondary">
+                    🔄 恢复默认
+                </button>
+                <button id="exportBtn" class="btn btn-secondary">
+                    📤 导出配置
+                </button>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>Made with ❤️ by <strong>微软科技</strong></p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="options.js"></script>
+</body>
+</html>
